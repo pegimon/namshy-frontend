@@ -1,10 +1,19 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Homeslider from "../components/section/homeslider";
 import { Container } from "react-bootstrap";
 import Homecards from "../components/section/homecards";
-import { HomeScards } from "../components/section/homecards";
+import * as prod_cat from '../api/product_category'
 import "../components/section/slider.css";
 export default function Home() {
+  const [categories, setCategories] = useState([])
+  useEffect(() => {
+    const getCategory = async () => {
+      await prod_cat.all_product_category().then(e => {
+        setCategories(e.response)
+      })
+    }
+    getCategory()
+  },[])
   return (
     <div
       className="homee"
@@ -17,109 +26,10 @@ export default function Home() {
         <Homeslider></Homeslider>
       </div>
 
-      <Container
-        className=" my-4"
-        style={{ justifyContent: "center", backgroundColor: "white" }}
-      >
-        <div>
-          <div className="" style={{ height: "70px", textAlign: "left" }}>
-            <div
-              className="col-2"
-              style={{ display: "inline-flex", fontSize: "2rem" }}
-            >
-              <i class="bi bi-handbag-fill " style={{ marginLeft: "30px" }}></i>
-              <h5 style={{ padding: "13px" }}>Hot Sale</h5>
-            </div>
-            <div
-              className=" col-9"
-              style={{ display: "flex", display: "inline-flex" }}
-            >
-              <a
-                className="btn btnfilter  mx-2 d-flex"
-                style={{
-                  backgroundColor: "rgba(178, 182, 186, 0.219)",
-                  borderRadius: "26px",
-                  border: "1.5px solid rgba(178, 182, 186, 0.219)",
-                }}
-                href="#"
-                role="button"
-              >
-                Hot sale
-              </a>
-
-              <a
-                className="btn  btnfilter  mx-2"
-                style={{
-                  backgroundColor: "rgba(178, 182, 186, 0.219)",
-                  borderRadius: "26px",
-                  border: "1.5px solid rgba(178, 182, 186, 0.219)",
-                }}
-                href="#"
-                role="button"
-              >
-                Electronics
-              </a>
-              <a
-                className="btn btnfilter mx-2"
-                style={{
-                  backgroundColor: "rgba(178, 182, 186, 0.219)",
-                  borderRadius: "26px",
-                  border: "1.5px solid rgba(178, 182, 186, 0.219)",
-                }}
-                href="#"
-                role="button"
-              >
-                Beauty
-              </a>
-              <a
-                className="btn btnfilter mx-2"
-                style={{
-                  backgroundColor: "rgba(178, 182, 186, 0.219)",
-                  borderRadius: "26px",
-                  border: "1.5px solid rgba(178, 182, 186, 0.219)",
-                }}
-                href="#"
-                role="button"
-              >
-                Home
-              </a>
-              <a
-                className="btn btnfilter mx-2"
-                style={{
-                  backgroundColor: "rgba(178, 182, 186, 0.219)",
-                  borderRadius: "26px",
-                  border: "1.5px solid rgba(178, 182, 186, 0.219)",
-                }}
-                href="#"
-                role="button"
-              >
-                Accessories
-              </a>
-              <a
-                className="btn btnfilter mx-2"
-                style={{
-                  backgroundColor: "rgba(178, 182, 186, 0.219)",
-                  borderRadius: "26px",
-                  border: "1.5px solid rgba(178, 182, 186, 0.219)",
-                }}
-                href="#"
-                role="button"
-              >
-                Shoes
-              </a>
-            </div>
-          </div>
-          <div className="" style={{ height: "fit-content" }}>
-            <HomeScards></HomeScards>
-          </div>
-        </div>
-      </Container>
-
       <Container className="my-4  " style={{ justifyContent: "center" }}>
         <div>
           <div className="" style={{ height: "fit-content" }}>
-            <Homecards></Homecards>
-          </div>
+            {categories?.map((category, index)=>(<Homecards category_id = {category._id} category_name={category.name} />))}          </div>
         </div>
       </Container>
     </div>

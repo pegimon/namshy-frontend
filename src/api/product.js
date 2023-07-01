@@ -21,3 +21,7 @@ export const delete_product = async (_id) => {
 export const update_product = async (_id, {Product_name, Product_desc, Product_SKU, Product_category_id, quantity, Product_price, Product_discount_id}) => {
     await axios.put(`${proxy}/${_id}`, {Product_name, Product_desc, Product_SKU, Product_category_id, quantity, Product_price, Product_discount_id})
 }
+
+export const get_product_by_category =  async (_id) => {
+    return (await (await axios.get(`${proxy}/category/${_id}`)).data)
+}

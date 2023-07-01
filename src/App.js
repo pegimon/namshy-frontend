@@ -7,7 +7,6 @@ import Page2 from "./pages/page2";
 import { products } from "./components/section/prodlist";
 import SelectedProductPage from "./pages/SelectedProductPage";
 import Header from "./components/Navs/Hreader";
-import * as discount from './api/discount' 
 
 function App() {
   

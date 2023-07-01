@@ -3,25 +3,33 @@ import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { Rating } from "@mui/material";
 import ThirdSlider from "../components/section/ThirdSlider";
-
+import * as Product from '../api/product'
 function SelectedProductPage({ products, handleClick }) {
   const [childHeight, setChildHeight] = useState(0);
+  const [selected, setSelected] = useState({});
+  const size = ["m", "l", "xl", "xxl"]
 
+  const { id } = useParams();
   useEffect(() => {
+    console.log('here')
+    const getById = async () => {
+      console.log('here')
+      await Product.get_product_by_id(id).then((e) => {
+        setSelected(e.response)
+      })
+    } 
+    getById()
+
     const child1 = document.getElementById("child1");
     const child1Height = child1.offsetHeight;
     setChildHeight(child1Height);
   }, []);
 
+
   const [value, setValue] = useState(0);
 
-  const { id } = useParams();
   console.log(id);
-  console.log("Products:", products);
 
-  const selected = products.find((product) => product.id === parseInt(id));
-
-  const { title, author, price, img } = products;
   return (
     <div
       className="viewcontainer justify-content-center   "
@@ -54,13 +62,14 @@ function SelectedProductPage({ products, handleClick }) {
             className="d-flex flex-wrap col-lg-6 "
             style={{ width: "630px", padding: "0px" }}
           >
-            {selected.images.map((image, index) => (
+              
+            {selected?.imageSrc?.map((image, index) => (
               <img
                 key={index}
                 style={{ width: "307px", height: "433px" }}
                 className="d-block mx-1 my-1 "
-                src={image.src}
-                alt={image.alt}
+                src={image}
+                alt={""}
               />
             ))}
           </Col>
@@ -81,7 +90,7 @@ function SelectedProductPage({ products, handleClick }) {
               >
                 <div className=" w-100  d-flex justify-content-between  my-1">
                   <div className=" my-1  w-50 ">
-                    <p style={{ textAlign: "left" }}>{selected.brand}</p>
+                    <p style={{ textAlign: "left" }}>{selected?.name}</p>
                   </div>
                   <div className=" my-1 mx-2 " style={{}}>
                     {" "}
@@ -91,7 +100,7 @@ function SelectedProductPage({ products, handleClick }) {
                 </div>
                 <div className=" my-1 w-100">
                   <p style={{ textAlign: "left", fontSize: "25px" }}>
-                    {selected.productname}
+                    {selected?.name}
                   </p>
                 </div>
                 {/* <div className=" w-100" >   </div> */}
@@ -101,8 +110,7 @@ function SelectedProductPage({ products, handleClick }) {
                   style={{ fontSize: "18px" }}
                 >
                   {" "}
-                  <s className="text-secondary mx-2">{selected.price}</s>
-                  <b className="text-danger mx-2 ">{selected.old}</b>
+                  <s className="text-secondary mx-2">{selected?.price}</s>
                 </div>
               </Row>
               {/*  */}
@@ -170,7 +178,7 @@ function SelectedProductPage({ products, handleClick }) {
                     style={{ textAlign: "left" }}
                   >
                     {" "}
-                    {selected.size.map((size, index) => (
+                    {size.map((size, index) => (
                       <button
                         style={{
                           zIndex: 3,
@@ -238,17 +246,7 @@ function SelectedProductPage({ products, handleClick }) {
                 >
                   Description
                 </div>
-                <div className="my-2">{selected.productdescriptiontitle}</div>
-                <ul
-                  className="my-1 mx-2 justify-content-start"
-                  style={{ textAlign: "left" }}
-                >
-                  {selected.productdescription.map(
-                    (productdescription, index) => (
-                      <li key={index}>{productdescription}</li>
-                    )
-                  )}
-                </ul>
+                <div className="my-2">{selected?.desc}</div>
               </Row>
               {/*  */}
               <Row
@@ -279,20 +277,7 @@ function SelectedProductPage({ products, handleClick }) {
                     <br /> product material
                   </div>
 
-                  <div className="mx-4" style={{ textAlign: "left" }}>
-                    {selected.sku}
-                    <br />
-                    {selected.color}
-                    <br />
-                    {selected.NeackType}
-                    <br />
-                    {selected.sizeShown}
-                    <br />
-                    {selected.supplier}
-                    <br />
-                    {selected.washing}
-                    <br /> {selected.Product}
-                  </div>
+                  
                 </div>
               </Row>
               {/*  */}
@@ -315,7 +300,7 @@ function SelectedProductPage({ products, handleClick }) {
                 </div>
                 <div className=" w-75">
                   <div className=" m-3 w-75" style={{ textAlign: "left" }}>
-                    {selected.brand}
+                    {selected?.brand}
                   </div>
                   <div className="d-flex  w-75">
                     <a className=" w-50" href="" style={{ color: "#7DCEA0" }}>

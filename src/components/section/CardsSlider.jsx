@@ -21,7 +21,7 @@ export function CardsSlider() {
 
   const handleImageClick = (product) => {
     setSelectedProduct(product);
-    navigate(`/SelectedProductPage/${product.id}`);
+    navigate(`/SelectedProductPage/${product._id}`);
   };
 
   return (

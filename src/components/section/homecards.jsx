@@ -23,24 +23,24 @@ export default function Homecards({category_id, category_name}) {
   return (
     <div>
         <Container
-          className="my-4"
+
           style={{ justifyContent: "center", backgroundColor: "white" }}
         >
-          <div className="" style={{ height: "70px", textAlign: "left" }}>
+          <div  style={{ overflowY:"auto", height: "70px", textAlign: "left" ,display:"flex","flex-direction": "row"}}>
             <div
-              className="col-2"
               style={{ display: "inline-flex", fontSize: "2rem" }}
             >
               <i class="bi bi-handbag-fill " style={{ marginLeft: "30px" }}></i>
               <h5 style={{ padding: "13px" }}>{category_name}</h5>
             </div>
             <div
-              className=" col-9"
-              style={{ display: "flex", display: "inline-flex" }}
+
+              style={{  display: "inline-flex" , width:"75%"}}
             >
               <a
                 className="btn btnfilter mx-2 d-flex"
                 style={{
+                  display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -52,8 +52,9 @@ export default function Homecards({category_id, category_name}) {
               </a>
 
               <a
-                className="btn btnfilter mx-2"
+                className="btn btnfilter mx-2 d-flex"
                 style={{
+                  display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -64,8 +65,9 @@ export default function Homecards({category_id, category_name}) {
                 Electronics
               </a>
               <a
-                className="btn btnfilter mx-2"
+                className="btn btnfilter mx-2 d-flex"
                 style={{
+                  display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -76,8 +78,9 @@ export default function Homecards({category_id, category_name}) {
                 Beauty
               </a>
               <a
-                className="btn btnfilter mx-2"
+                className="btn btnfilter mx-2 d-flex"
                 style={{
+                  display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -88,8 +91,9 @@ export default function Homecards({category_id, category_name}) {
                 Home
               </a>
               <a
-                className="btn btnfilter mx-2"
+                className="btn btnfilter mx-2 d-flex"
                 style={{
+                  display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -100,8 +104,9 @@ export default function Homecards({category_id, category_name}) {
                 Accessories
               </a>
               <a
-                className="btn btnfilter mx-2"
+                className="btn btnfilter mx-2 d-flex"
                 style={{
+                  display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",

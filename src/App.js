@@ -7,6 +7,7 @@ import Page2 from "./pages/page2";
 import { products } from "./components/section/prodlist";
 import SelectedProductPage from "./pages/SelectedProductPage";
 import Header from "./components/Navs/Hreader";
+import Footer from "./components/Navs/footer";
 
 function App() {
   
@@ -36,7 +37,9 @@ function App() {
         <Route path="/kids" element={<Home section={"KIDS"}/>} />
         <Route path="/premiumCategory" element={<Home section={"PREMIUM"}/>} />
       </Routes> 
-      <footer style={{height:"200px",backgroundColor:"black" ,position:"relative" ,top:"70px"}}></footer> 
+
+         <footer style={{height:"200px",backgroundColor:"black" ,position:"relative" ,top:"70px"}}><Footer/></footer> 
+
         
     </div>
   );

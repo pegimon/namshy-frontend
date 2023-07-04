@@ -11,17 +11,11 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 import { useNavigate } from "react-router-dom";
 
-export function NavBar({ setCurrentPage, setShow }) {
+export function NavBar() {
   const navigate = useNavigate();
-  const [selectedLink, setSelectedLink] = useState("#men");
-
+ 
   const handleLinkClick = (href) => {
-    setSelectedLink(href);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    setCurrentPage(href);
+    navigate(href);
   };
 
   const linkStyle = {
@@ -43,10 +37,10 @@ export function NavBar({ setCurrentPage, setShow }) {
               <ShoppingBagOutlinedIcon />
             </Nav.Link>
             {/* <Nav.Link href={"#cart"} style={{marginLeft:'3%'}} onClick={() => setShow(false)}><ShoppingBagOutlinedIcon /></Nav.Link>  */}
-            <Nav.Link href={"#profile"}>
+            <Nav.Link href={"/profile"}>
               <AccountCircleOutlinedIcon />
             </Nav.Link>
-            <Nav.Link href={"#favorites"}>
+            <Nav.Link href={"/favorites"}>
               <FavoriteBorderOutlinedIcon />
             </Nav.Link>
             <div style={container}>
@@ -58,38 +52,38 @@ export function NavBar({ setCurrentPage, setShow }) {
               />
             </div>
             <Nav.Link
-              href="#premium"
+              href="/premiumCategory"
               style={{
                 ...linkStyle,
                 background:
-                  selectedLink === "#premium" ? "white" : "transparent",
-                color: selectedLink === "#premium" ? "black" : "white",
+                  window.location.pathname === "/premiumCategory" ? "white" : "transparent",
+                color: window.location.pathname === "/premiumCategory" ? "black" : "white",
               }}
-              onClick={() => handleLinkClick("#premium")}
+              onClick={() => handleLinkClick("/premiumCategory")}
             >
               Premium
             </Nav.Link>
             <Nav.Link
-              href="#kids"
+              href="/kids"
               style={{
                 ...linkStyle,
-                background: selectedLink === "#kids" ? "white" : "transparent",
-                color: selectedLink === "#kids" ? "black" : "white",
+                background: window.location.pathname === "/kids" ? "white" : "transparent",
+                color: window.location.pathname === "/kids" ? "black" : "white",
               }}
-              onClick={() => handleLinkClick("#kids")}
+              onClick={() => handleLinkClick("/kids")}
             >
               Kids
             </Nav.Link>
             <Nav.Link
-              href="#beauty"
+              href="/beauty"
               style={{
                 ...linkStyle,
                 background:
-                  selectedLink === "#beauty" ? "white" : "transparent",
-                color: selectedLink === "#beauty" ? "black" : "white",
+                window.location.pathname === "/beauty" ? "white" : "transparent",
+                color: window.location.pathname === "/beauty" ? "black" : "white",
                 whiteSpace: "nowrap",
               }}
-              onClick={() => handleLinkClick("#beauty")}
+              onClick={() => handleLinkClick("/beauty")}
             >
               Beauty
             </Nav.Link>
@@ -97,26 +91,26 @@ export function NavBar({ setCurrentPage, setShow }) {
               href="/"
               style={{
                 ...linkStyle,
-                background: selectedLink === "#men" ? "white" : "transparent",
-                color: selectedLink === "#men" ? "black" : "white",
+                background: window.location.pathname === "/men" || window.location.pathname === '/' ? "white" : "transparent",
+                color: window.location.pathname === "/men" || window.location.pathname === '/' ? "black" : "white",
               }}
-              onClick={() => handleLinkClick("#men")}
+              onClick={() => handleLinkClick("/men")}
             >
               Men
             </Nav.Link>
             <Nav.Link
-              href="#women"
+              href="/women"
               style={{
                 ...linkStyle,
-                background: selectedLink === "#women" ? "white" : "transparent",
-                color: selectedLink === "#women" ? "black" : "white",
+                background: window.location.pathname === "/women" ? "white" : "transparent",
+                color: window.location.pathname === "/women" ? "black" : "white",
               }}
               onClick={() => handleLinkClick("#women")}
             >
               Women
             </Nav.Link>
           </Nav>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             {/* <img src={logo} alt="logo"/> */}
           </Navbar.Brand>
         </Container>

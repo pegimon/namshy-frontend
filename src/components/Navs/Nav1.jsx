@@ -25,9 +25,9 @@ export function NavBar() {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark" fixed={"top"} className="custom-navbar">
-        <Container fluid className="px-0">
-          <Nav className="me-auto">
+      <Navbar bg="dark" variant="dark" fixed={"top"} className="custom-navbar" style={{height: "60px", width: "100vw", backgroundColor: "#000",display:"flex","flex-direction":"row"}}>
+        <Container fluid className="px-0" >
+          <Nav >
             <Nav.Link
               style={{ marginLeft: "3%" }}
               onClick={() => {

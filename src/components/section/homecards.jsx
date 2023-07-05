@@ -14,6 +14,7 @@ export default function Homecards({category_id, category_name}) {
   useEffect(() => {
     const getProducts = async () => {
       await product.get_product_by_category(category_id).then(e => {
+
         setProducts(e)
       })
     }
@@ -35,15 +36,19 @@ export default function Homecards({category_id, category_name}) {
             </div>
             <div
 
-              style={{  display: "inline-flex" , width:"75%"}}
+              style={{  display: "inline-flex" , width:"100%",height:"75%"}}
             >
               <a
+              
                 className="btn btnfilter mx-2 d-flex"
                 style={{
-                  display:"inline-block",
+                  hight:"80%",
+                  justifyContent: "center",
+
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
+                  margin: "auto"
                 }}
                 href="#"
                 role="button"
@@ -54,10 +59,13 @@ export default function Homecards({category_id, category_name}) {
               <a
                 className="btn btnfilter mx-2 d-flex"
                 style={{
+                  hight:"80%",
+                  justifyContent: "center",
                   display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
+                  margin: "auto"
                 }}
                 href="#"
                 role="button"
@@ -67,10 +75,13 @@ export default function Homecards({category_id, category_name}) {
               <a
                 className="btn btnfilter mx-2 d-flex"
                 style={{
+                  hight:"80%",
+                  justifyContent: "center",
                   display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
+                  margin: "auto"
                 }}
                 href="#"
                 role="button"
@@ -80,10 +91,13 @@ export default function Homecards({category_id, category_name}) {
               <a
                 className="btn btnfilter mx-2 d-flex"
                 style={{
+                  hight:"80%",
+                  justifyContent: "center",
                   display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
+                  margin: "auto"
                 }}
                 href="#"
                 role="button"
@@ -93,10 +107,13 @@ export default function Homecards({category_id, category_name}) {
               <a
                 className="btn btnfilter mx-2 d-flex"
                 style={{
+                  hight:"80%",
+                  justifyContent: "center",
                   display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
                   borderRadius: "26px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
+                  margin: "auto"
                 }}
                 href="#"
                 role="button"
@@ -106,15 +123,18 @@ export default function Homecards({category_id, category_name}) {
               <a
                 className="btn btnfilter mx-2 d-flex"
                 style={{
+                  hight:"50%",
+                  justifyContent: "center",
                   display:"inline-block",
                   backgroundColor: "rgba(178, 182, 186, 0.219)",
-                  borderRadius: "26px",
+                  borderRadius: "20px",
                   border: "1.5px solid rgba(178, 182, 186, 0.219)",
+                  margin: "auto"
                 }}
                 href="#"
                 role="button"
               >
-                Shoes
+                <span style={{ margin: "auto" }}>Shoes</span>
               </a>
             </div>
           </div>

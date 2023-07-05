@@ -114,9 +114,9 @@ export function NavBar() {
           
           <Navbar.Brand>
             {<div style={imageNav}>
-              <img src="/logo.png" alt="logo" onClick={() => {
+              <i onClick={() => {
               navigate("/", {replace: true});
-            }} height={"50px"} width={"60px"} style={{marginRight: "25px"}}/>
+            }} height={"50px"} width={"60px"} style={{marginRight: "25px"}}> الذئب</i>
               </div>}
           </Navbar.Brand>
         </Container>

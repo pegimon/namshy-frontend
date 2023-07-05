@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React,{useState} from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 export function NavBar() {
   const navigate = useNavigate();
- 
+  const [query, setQuery] = useState("");
   const handleLinkClick = (href) => {
     navigate(href);
   };
@@ -25,33 +25,34 @@ export function NavBar() {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark" fixed={"top"} className="custom-navbar" style={{height: "60px", width: "100vw", backgroundColor: "#000",display:"flex","flex-direction":"row"}}>
-        <Container fluid className="px-0" >
-          <Nav >
-            <Nav.Link
-              style={{ marginLeft: "3%" }}
-              onClick={() => {
+      <Navbar variant="dark" fixed={"top"} className="custom-navbar" style={{height: "60px", width: "100vw", backgroundColor: "rgb(0, 0, 0)"}}>
+        <Container fluid className="px-0">
+          <Nav.Link style={{paddingLeft: "10px"}}  href={"/profile"}>
+              <AccountCircleOutlinedIcon style={{color: "#fff", fontSize: "30px"}}/>
+          </Nav.Link>
+          <Nav.Link style={{paddingLeft: "20px"}} onClick={() => {
                 navigate("/Bag");
-              }}
-            >
-              <ShoppingBagOutlinedIcon />
+              }}>
+              <ShoppingBagOutlinedIcon style={{color: "#fff", fontSize: "30px"}}/>
+          </Nav.Link>
+          <Nav.Link href={"/favorites"}  style={{paddingLeft: "20px"}}>
+              <FavoriteBorderOutlinedIcon style={{color: "#fff", fontSize: "30px"}} />
             </Nav.Link>
-            {/* <Nav.Link href={"#cart"} style={{marginLeft:'3%'}} onClick={() => setShow(false)}><ShoppingBagOutlinedIcon /></Nav.Link>  */}
-            <Nav.Link href={"/profile"}>
-              <AccountCircleOutlinedIcon />
-            </Nav.Link>
-            <Nav.Link href={"/favorites"}>
-              <FavoriteBorderOutlinedIcon />
-            </Nav.Link>
+          <Nav className="me-auto" style={{display: "flex", alignItems: "center", justifyContent: "center", width: "80vw"}}>
             <div style={container}>
-              <Nav.Link style={{ color: "black" }}>
-                <SearchOutlinedIcon />
+              <Nav.Link style={{ color: "#fff"}}>
+                <SearchOutlinedIcon style={{color: "#000"}}/>
               </Nav.Link>
               <input
-                style={{ border: "none", outline: "none", textAlign: "right" }}
+                style={{ color: "#000", border: "none", outline: "none", textAlign: "right", background: "#fff", borderRadius: "25px", width: "100%"}}
+                value={query}
+                onChange={(e)=>{setQuery(e.target.value)}}
               />
             </div>
-            <Nav.Link
+            {/* <Nav.Link href={"#cart"} style={{marginLeft:'3%'}} onClick={() => setShow(false)}><ShoppingBagOutlinedIcon /></Nav.Link>  */}
+          </Nav>
+          <Nav className="me-auto" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+          <Nav.Link
               href="/premiumCategory"
               style={{
                 ...linkStyle,
@@ -110,8 +111,13 @@ export function NavBar() {
               Women
             </Nav.Link>
           </Nav>
-          <Navbar.Brand href="/home">
-            {/* <img src={logo} alt="logo"/> */}
+          
+          <Navbar.Brand>
+            {<div style={imageNav}>
+              <img src="/logo.png" alt="logo" onClick={() => {
+              navigate("/", {replace: true});
+            }} height={"50px"} width={"60px"} style={{marginRight: "25px"}}/>
+              </div>}
           </Navbar.Brand>
         </Container>
       </Navbar>
@@ -125,4 +131,9 @@ const container = {
   marginRight: "3%",
   marginLeft: "3%",
   borderRadius: 50,
+};
+const imageNav = {
+  width: "25vw",
+  display: "flex",
+  justifyContent: "flex-end",
 };

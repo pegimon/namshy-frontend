@@ -11,4 +11,9 @@
     display: none;
   }
 
-  
+.hider.a{
+    hover:pointer;
+}
+.hell::-webkit-scrollbar {
+    display: none;
+  }

@@ -103,7 +103,7 @@ function SelectedProductPage({ products, handleClick }) {
                   style={{ fontSize: "18px" }}
                 >
                   {" "}
-                  <s className="text-secondary mx-2">{selected?.price} $</s>
+                  <div className=" mx-2">{selected?.price} </div>
                 </div>
               </div>
               {/*  */}
@@ -250,7 +250,7 @@ function SelectedProductPage({ products, handleClick }) {
               {/*  */}
               <div
                 className=" d-flex flex-wrap   "
-                style={{ width: "620px" }}
+                style={{ width: "100%" ,height:"30%" }}
               >
                 <div
                   className="my-4"
@@ -261,7 +261,7 @@ function SelectedProductPage({ products, handleClick }) {
                 >
                   Info & Care
                 </div>
-                <div className="d-flex my-2">
+                <div className="d-flex">
                   <div style={{ textAlign: "left" }}>
                     {" "}
                     SKU
@@ -275,14 +275,12 @@ function SelectedProductPage({ products, handleClick }) {
                     washing instructions
                     <br /> product material
                   </div>
-
-                  
                 </div>
               </div>
               {/*  */}
               <div
                 className=" d-flex flex-wrap   "
-                style={{ width: "620px" }}
+                style={{ width: "100%" }}
               >
                 <div className="d-flex w-25 ">
                   <a

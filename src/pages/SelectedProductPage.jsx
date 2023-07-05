@@ -11,11 +11,10 @@ function SelectedProductPage({ products, handleClick }) {
 
   const { id } = useParams();
   useEffect(() => {
-    console.log('here')
+
     const getById = async () => {
-      console.log('here')
       await Product.get_product_by_id(id).then((e) => {
-        setSelected(e.response)
+        setSelected(e)
       })
     } 
     getById()
@@ -27,8 +26,6 @@ function SelectedProductPage({ products, handleClick }) {
 
 
   const [value, setValue] = useState(0);
-
-  console.log(id);
 
   return (
     <div
@@ -55,18 +52,18 @@ function SelectedProductPage({ products, handleClick }) {
           </ol>
         </nav>
       </div>
-      <Container id="parent" className=" justify-content-center" style={{width:"100%"}}>
+      <Container id="parent"  style={{width:"100%"}}>
         <div style={{display:"flex","flex-direction":"row",width:"100%",flexDirection:"row"}}>
           <div
             id="child1"
             className="d-flex flex-wrap col-lg-6 "
-            style={{ width: "43%", padding: "0px" }}
+            style={{ width: "43%", padding: "0px",justifyContent:"space-between" ,marginRight:"10px" }}
           >
               
             {selected?.imageSrc?.map((image, index) => (
               <img
                 key={index}
-                style={{ width: "50%", }}
+                style={{ width: "45%", height:"45%" }}
                 className="d-block   "
                 src={image}
                 alt={""}
@@ -247,10 +244,9 @@ function SelectedProductPage({ products, handleClick }) {
                 <div
                   style={{ borderBottom: " 1px solid gray", textAlign: "left" }}
                 >
-                  Description
-                </div>
-                <div className="my-2">{selected?.desc}</div>
-              </div>
+                  Description : {selected?.desc}
+                 </div>
+                              </div>
               {/*  */}
               <div
                 className=" d-flex flex-wrap   "

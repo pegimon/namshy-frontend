@@ -33,15 +33,15 @@ export function NavBar() {
           ,overflowY:"auto"
           }}>
           <Nav.Link style={{paddingLeft: "50px"}}  href={"/profile"}>
-              <AccountCircleOutlinedIcon style={{color: "#fff", fontSize: "30px"}}/>
+              <AccountCircleOutlinedIcon style={{color: "#fff"  }}/>
           </Nav.Link>
           <Nav.Link style={{paddingLeft: "20px"}} onClick={() => {
                 navigate("/Bag");
               }}>
-              <ShoppingBagOutlinedIcon style={{color: "#fff", fontSize: "30px"}}/>
+              <ShoppingBagOutlinedIcon style={{color: "#fff"  }}/>
           </Nav.Link>
           <Nav.Link href={"/favorites"}  style={{paddingLeft: "20px"}}>
-              <FavoriteBorderOutlinedIcon style={{color: "#fff", fontSize: "30px"}} />
+              <FavoriteBorderOutlinedIcon style={{color: "#fff" }} />
             </Nav.Link>
 
 

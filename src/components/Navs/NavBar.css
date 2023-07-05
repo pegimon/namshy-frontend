@@ -7,5 +7,8 @@
 .custom-navbar {
     height: 9%;
 }
+.hider::-webkit-scrollbar {
+    display: none;
+  }
 
   

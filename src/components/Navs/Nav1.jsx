@@ -25,9 +25,14 @@ export function NavBar() {
 
   return (
     <div>
-      <Navbar variant="dark" fixed={"top"} className="custom-navbar" style={{height: "60px", width: "100vw", backgroundColor: "rgb(0, 0, 0)"}}>
+      <div style={{height: "60px", width: "100vw", backgroundColor: "rgb(0, 0, 0)"}}>
         <Container fluid className="px-0">
-          <Nav.Link style={{paddingLeft: "10px"}}  href={"/profile"}>
+          
+          <Nav className="me-auto hider" style={{display: "flex", flexWrap:"nowrap", alignItems: "center", justifyContent: "center", width: "100vw"
+          
+          ,overflowY:"auto"
+          }}>
+          <Nav.Link style={{paddingLeft: "50px"}}  href={"/profile"}>
               <AccountCircleOutlinedIcon style={{color: "#fff", fontSize: "30px"}}/>
           </Nav.Link>
           <Nav.Link style={{paddingLeft: "20px"}} onClick={() => {
@@ -38,7 +43,8 @@ export function NavBar() {
           <Nav.Link href={"/favorites"}  style={{paddingLeft: "20px"}}>
               <FavoriteBorderOutlinedIcon style={{color: "#fff", fontSize: "30px"}} />
             </Nav.Link>
-          <Nav className="me-auto" style={{display: "flex", alignItems: "center", justifyContent: "center", width: "80vw"}}>
+
+
             <div style={container}>
               <Nav.Link style={{ color: "#fff"}}>
                 <SearchOutlinedIcon style={{color: "#000"}}/>
@@ -50,8 +56,7 @@ export function NavBar() {
               />
             </div>
             {/* <Nav.Link href={"#cart"} style={{marginLeft:'3%'}} onClick={() => setShow(false)}><ShoppingBagOutlinedIcon /></Nav.Link>  */}
-          </Nav>
-          <Nav className="me-auto" style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+
           <Nav.Link
               href="/premiumCategory"
               style={{
@@ -110,17 +115,19 @@ export function NavBar() {
             >
               Women
             </Nav.Link>
-          </Nav>
-          
-          <Navbar.Brand>
+
+            <Navbar.Brand>
             {<div style={imageNav}>
               <i onClick={() => {
               navigate("/", {replace: true});
             }} height={"50px"} width={"60px"} style={{marginRight: "25px"}}> الذئب</i>
               </div>}
           </Navbar.Brand>
+          </Nav>
+          
+          
         </Container>
-      </Navbar>
+      </div>
     </div>
   );
 }
@@ -136,4 +143,6 @@ const imageNav = {
   width: "25vw",
   display: "flex",
   justifyContent: "flex-end",
+
+  color:"#fff"
 };

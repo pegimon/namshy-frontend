@@ -28,7 +28,7 @@ export function NavBar() {
       <div
         style={{
           height: "60px",
-          width: "100vw",
+          width: "100%",
           backgroundColor: "rgb(0, 0, 0)",
         }}
       >

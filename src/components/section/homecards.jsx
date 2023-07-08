@@ -10,6 +10,7 @@ export default function Homecards({ category_id, category_name }) {
     setSelectedCardIndex(index);
   };
   const [products, setProducts] = useState([]);
+  const [filter, setFilter] = useState("");
   useEffect(() => {
     const getProducts = async () => {
       await product.get_product_by_category(category_id).then((e) => {
@@ -25,7 +26,7 @@ export default function Homecards({ category_id, category_name }) {
         style={{
           justifyContent: "center",
           backgroundColor: "rgba(178, 182, 186, 0.219)",
-          marginBottom: "3%",
+          margin:"4%",
           borderRadius: "30px",
         }}
       >
@@ -41,92 +42,105 @@ export default function Homecards({ category_id, category_name }) {
         >
           <div style={{ display: "inline-flex", fontSize: "2rem" }}>
             <i class="bi bi-handbag-fill " style={{ marginLeft: "30px" }}></i>
-            <h5 style={{ display: "inline-flex", padding: "13px" }}>
+            <h5 style={{ display: "inline-flex", padding: "13px" , whiteSpace: "nowrap",}}>
               {category_name}
             </h5>
           </div>
-          <div style={{ display: "inline-flex", width: "100%", height: "75%" }}>
-            <a
+          <div style={{ display: "inline-flex", width: "100%", height: "75%","margin-left":"11%" }}>
+            <div
               className="btn btnfilter mx-2 d-flex"
               style={{
                 hight: "80%",
                 justifyContent: "center",
 
-                backgroundColor: "rgba(178, 182, 186, 0.219)",
+                backgroundColor: filter!=="New Arrivals"?
+                "rgba(178, 182, 186, 0.219)":"#198754"
+                ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
                 margin: "auto",
               }}
-              href="#"
+              onClick={(e) => { setFilter (e.target.id); }}
               role="button"
+              id="New Arrivals"
             >
               New Arrivals
-            </a>
+            </div>
 
-            <a
+            <div
               className="btn btnfilter mx-2 d-flex"
               style={{
                 hight: "80%",
                 justifyContent: "center",
-                display: "inline-block",
-                backgroundColor: "rgba(178, 182, 186, 0.219)",
+                backgroundColor: filter!=="Clothing"?
+                "rgba(178, 182, 186, 0.219)":"#198754"
+                ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
                 margin: "auto",
+
+                
               }}
-              href="#"
+              onClick={(e) => { setFilter (e.target.id); }}
               role="button"
+              id="Clothing"
             >
               Clothing
-            </a>
-            <a
+            </div>
+            <div
               className="btn btnfilter mx-2 d-flex"
               style={{
                 hight: "80%",
                 justifyContent: "center",
-                display: "inline-block",
-                backgroundColor: "rgba(178, 182, 186, 0.219)",
+                backgroundColor: filter!=="Shoes"?
+                "rgba(178, 182, 186, 0.219)":"#198754"
+                ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
                 margin: "auto",
               }}
-              href="#"
+              onClick={(e) => { setFilter (e.target.id); }}
               role="button"
+              id="Shoes"
             >
               Shoes
-            </a>
-            <a
+            </div>
+            <div
               className="btn btnfilter mx-2 d-flex"
               style={{
                 hight: "80%",
                 justifyContent: "center",
-                display: "inline-block",
-                backgroundColor: "rgba(178, 182, 186, 0.219)",
+                backgroundColor: filter!=="Bags"?
+                "rgba(178, 182, 186, 0.219)":"#198754"
+                ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
                 margin: "auto",
               }}
-              href="#"
+              onClick={(e) => { setFilter(e.target.id); }}
               role="button"
+              id="Bags"
             >
               Bags
-            </a>
-            <a
+            </div>
+            <div
               className="btn btnfilter mx-2 d-flex"
               style={{
                 hight: "80%",
                 justifyContent: "center",
-                display: "inline-block",
-                backgroundColor: "rgba(178, 182, 186, 0.219)",
+                backgroundColor: filter!=="Accessories"?
+                "rgba(178, 182, 186, 0.219)":"#198754"
+                ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
                 margin: "auto",
               }}
-              href="#"
+              onClick={(e) => { setFilter(e.target.id); }}
               role="button"
+              id="Accessories"
             >
               Accessories
-            </a>
+            </div>
           </div>
         </div>
         <div className="d-flex justify-content-around flex-wrap">

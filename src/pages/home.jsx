@@ -29,8 +29,9 @@ export default function Home({section}) {
       <Container className="my-4  " style={{ justifyContent: "center" }}>
         <div>
           <div className="" style={{ height: "fit-content" }}>
-            <h1>{section}</h1>
-            {categories?.map((category, index)=>(<Homecards category_id = {category._id} category_name={category.name} />))}          </div>
+            <h1 >{section}</h1>
+            {categories?.map((category, index)=>(<Homecards category_id = {category._id} category_name={category.name}
+            />))}          </div>
         </div>
       </Container>
     </div>

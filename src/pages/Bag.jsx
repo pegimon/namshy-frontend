@@ -11,13 +11,13 @@ export default function Bag() {
             className="btn text-light "
             style={{ backgroundColor: "#7DCEA0" }}
           >
-            Button One
+            AI Virtual Room
           </button>
           <button
             className="btn "
             style={{ color: "#7DCEA0", border: "1px solid gray" }}
           >
-            Button Two
+            Back
           </button>
         </div>
 
@@ -236,19 +236,13 @@ export default function Bag() {
             className="btn text-light "
             style={{ backgroundColor: "#7DCEA0" }}
           >
-            Button One
-          </button>
-          <button
-            className="btn "
-            style={{ color: "#7DCEA0", border: "1px solid gray" }}
-          >
-            Button Two
+            Process to Chekout
           </button>
         </div>
       </div>
       <section className=" my-5 h-25 " style={{ width: "1300px" }}>
         <div className=" w-100 my-3  " style={{ textAlign: "left" }}>
-          <p>Similar Products</p>
+          <h2>Similar Product </h2>
         </div>
         <div>
           <ThirdSlider id="second"></ThirdSlider>

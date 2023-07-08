@@ -54,7 +54,7 @@ export default function Homecards({ category_id, category_name }) {
                 justifyContent: "center",
 
                 backgroundColor: filter!=="New Arrivals"?
-                "rgba(178, 182, 186, 0.219)":"#198754"
+                "rgba(178, 182, 186, 0.219)":"#0d6efd"
                 ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -73,7 +73,7 @@ export default function Homecards({ category_id, category_name }) {
                 hight: "80%",
                 justifyContent: "center",
                 backgroundColor: filter!=="Clothing"?
-                "rgba(178, 182, 186, 0.219)":"#198754"
+                "rgba(178, 182, 186, 0.219)":"#0d6efd"
                 ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -93,7 +93,7 @@ export default function Homecards({ category_id, category_name }) {
                 hight: "80%",
                 justifyContent: "center",
                 backgroundColor: filter!=="Shoes"?
-                "rgba(178, 182, 186, 0.219)":"#198754"
+                "rgba(178, 182, 186, 0.219)":"#0d6efd"
                 ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -111,7 +111,7 @@ export default function Homecards({ category_id, category_name }) {
                 hight: "80%",
                 justifyContent: "center",
                 backgroundColor: filter!=="Bags"?
-                "rgba(178, 182, 186, 0.219)":"#198754"
+                "rgba(178, 182, 186, 0.219)":"#0d6efd"
                 ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",
@@ -129,7 +129,7 @@ export default function Homecards({ category_id, category_name }) {
                 hight: "80%",
                 justifyContent: "center",
                 backgroundColor: filter!=="Accessories"?
-                "rgba(178, 182, 186, 0.219)":"#198754"
+                "rgba(178, 182, 186, 0.219)":"#0d6efd"
                 ,
                 borderRadius: "26px",
                 border: "1.5px solid rgba(178, 182, 186, 0.219)",

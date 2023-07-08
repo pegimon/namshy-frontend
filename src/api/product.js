@@ -2,8 +2,8 @@ import axios from 'axios'
 import {backend_url} from '../config'
 const proxy = `${backend_url}/product`
 
-export const add_product = async ({Product_name, Product_desc, Product_SKU, Product_category_id, quantity, Product_price, Product_discount_id}) => {
-    await axios.post(`${proxy}`,{Product_name, Product_desc, Product_SKU, Product_category_id, quantity, Product_price, Product_discount_id})
+export const add_product = async ({name, desc, SKU, category_id, quantity, price_before,price_after, sizes, subCategory, imageSrc}) => {
+    await axios.post(`${proxy}`,{name, desc, SKU, category_id, quantity, price_before,price_after, sizes, subCategory, imageSrc})
 }
 
 export const all_product = async () => {
@@ -18,8 +18,8 @@ export const delete_product = async (_id) => {
     await axios.delete(`${proxy}/${_id}`)
 }
 
-export const update_product = async (_id, {Product_name, Product_desc, Product_SKU, Product_category_id, quantity, Product_price, Product_discount_id}) => {
-    await axios.put(`${proxy}/${_id}`, {Product_name, Product_desc, Product_SKU, Product_category_id, quantity, Product_price, Product_discount_id})
+export const update_product = async (_id, {name, desc, SKU, category_id, quantity, price_before,price_after, sizes, subCategory, imageSrc}) => {
+    await axios.put(`${proxy}/${_id}`, {name, desc, SKU, category_id, quantity, price_before,price_after, sizes, subCategory, imageSrc})
 }
 
 export const get_product_by_category =  async (_id) => {

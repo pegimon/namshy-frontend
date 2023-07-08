@@ -16,14 +16,8 @@ export default function Page1() {
           <FirstHeader />
         </div>
 
-        <div className="w-100 " style={{ height: "75px", textalign: "center" }}>
-          <h2>shop by Brand</h2>
-        </div>
+        <div className="w-100 " style={{ height: "75px", textalign: "center" }}>    </div>
 
-        <div className="adslider  w-100">
-          <img className="w-100" src="slider.PNG" alt="" />
-          {/* <AdSlider /> */}
-        </div>
 
         <div className="d-flex flex-row w-100">
           <div style={{ width: "25%" }}>

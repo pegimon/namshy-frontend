@@ -157,8 +157,9 @@ export function NavBar() {
                       : "transparent",
                   color:
                     window.location.pathname === "/women" ? "black" : "white",
+                  whiteSpace: "nowrap",
                 }}
-                onClick={() => handleLinkClick("#women")}
+                onClick={() => handleLinkClick("/women")}
               >
                 Women
               </div>
@@ -169,11 +170,13 @@ export function NavBar() {
                     onClick={() => {
                       navigate("/", { replace: true });
                     }}
-                    height={"50px"}
+                    height={"100%"}
                     width={"60px"}
                     style={{display:"flex", marginRight: "10px",color:"white" }}
                   >
-                    الذئب
+                    <img src="logo.jpg" style={{height:"50px"}}></img>
+
+
                  
                 </div>
               

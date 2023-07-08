@@ -8,7 +8,7 @@ import { products } from "./components/section/prodlist";
 import SelectedProductPage from "./pages/SelectedProductPage";
 import Header from "./components/Navs/Hreader";
 import Footer from "./components/Navs/footer";
-
+import Profile from "./pages/profile";
 function App() {
   
    return (
@@ -36,6 +36,9 @@ function App() {
         <Route path="/beauty" element={<Home section={"BEAUTY"}/>} />
         <Route path="/kids" element={<Home section={"KIDS"}/>} />
         <Route path="/premiumCategory" element={<Home section={"PREMIUM"}/>} />
+        <Route path="/profile" element={<Profile path={0}/>} />
+        <Route path="/my-rewards" element={<Profile path={1}/>} />
+        <Route path="/orders" element={<Profile path={2}/>} />
       </Routes> 
 
          <footer style={{height:"200px",backgroundColor:"black" ,position:"relative" ,top:"70px"}}><Footer/></footer> 

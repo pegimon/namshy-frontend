@@ -1,5 +1,11 @@
 import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 export default function Homeslider() {
+  const src = [
+    "https://images.pexels.com/photos/317377/pexels-photo-317377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  ]
   return (
     <div
       id="carouselExample"
@@ -8,33 +14,18 @@ export default function Homeslider() {
     >
       <div
         className="carousel-inner"
-        style={{ height: "500px", backgroundColor: "blue" }}
+        style={{ height: "500px" , borderRadius:"50px", margin:'auto'}}
       >
-        <div className="carousel-item active">
-          <img
-            className="d-block w-100 "
-            src="https://images.pexels.com/photos/317377/pexels-photo-317377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Third slide"
-            style={{ height: "500px" }}
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Second slide"
-            style={{ height: "500px" }}
-          />
-        </div>
-        <div className="carousel-item">
-          {" "}
-          <img
-            className="d-block w-100 "
-            src="https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="First slide"
-            style={{ height: "500px" }}
-          />
-        </div>
+        <Carousel interval={3000} controls={false} style={{  justifyContent:'center'}}>
+            {src.map((image, index) => (
+                <Carousel.Item key={index}>
+                <img
+                    src={image}
+                    alt={""}
+                />
+                </Carousel.Item>
+            ))}
+            </Carousel>
       </div>
       <button
         className="carousel-control-prev"

@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
-import Carousel from "react-bootstrap/Carousel";
-import { Card } from "react-bootstrap";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import * as product from "../../api/product";
+import Product from "./Product";
 export default function Homecards({ category_id, category_name }) {
-  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
-  const handleButtonClick = (index) => {
-    setSelectedCardIndex(index);
-  };
+ 
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState("");
   useEffect(() => {
@@ -145,63 +141,7 @@ export default function Homecards({ category_id, category_name }) {
         </div>
         <div className="d-flex justify-content-around flex-wrap">
           {products.map((product, index) => (
-            <div
-              className="card m-2"
-              style={{
-                border:
-                  selectedCardIndex === index
-                    ? "1px solid #58b368"
-                    : "0.5px solid #C8D2D1",
-                width: "288px",
-                height: "320px",
-              }}
-              // style={{ width: "18rem", height: "320px" ,}}
-              key={index}
-            >
-              <Carousel controls={false} style={{ justifyContent: "center" }}>
-                {product.imageSrc.map((image, index) => (
-                  <Carousel.Item key={index}>
-                    <img
-                      className="d-block  "
-                      style={{
-                        width: "90%",
-                        height: "250px",
-                        margin: "auto",
-                        "border-radius": "10px",
-                      }}
-                      src={image}
-                      alt={""}
-                    />
-                  </Carousel.Item>
-                ))}
-              </Carousel>
-              <div
-                className="card-body my-2 d-flex   justify-content-between"
-                style={{ fontSize: "15px", padding: "5px" }}
-              >
-                <div className="d-flex flex-column align-items-start ">
-                  <Card.Title className="mb-0">{product.name}</Card.Title>
-                  <Card.Text className="mb-0">Price: {product.price}</Card.Text>
-                </div>
-                <div>
-                  <button
-                    className="btn text-light   "
-                    style={{ backgroundColor: "#7DCEA0", marginRight: "2px" }}
-                    onClick={() => handleButtonClick(index)}
-                  >
-                    <i className="bi bi-heart"></i>
-                  </button>
-
-                  <button
-                    className="btn text-light  "
-                    style={{ backgroundColor: "#7DCEA0" }}
-                    onClick={() => handleButtonClick(index)}
-                  >
-                    <i class="bi bi-plus-lg"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
+            <Product product={product} index={index}/>
           ))}
         </div>
       </Container>

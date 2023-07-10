@@ -10,7 +10,7 @@ import ProfileInfo from "../components/profilecontainer/ProfileInfo"
 import Rewards from "../components/profilecontainer/rewards";
 import Orders from "../components/profilecontainer/orders"
 import Credit from "../components/profilecontainer/cedit";
-import Header from "../components/Navs/Header";
+import { NavBar } from "../components/Navs/Nav1";
 import * as user from '../api/user'
 
 
@@ -38,7 +38,7 @@ function Profile({path}) {
 
   return (
     <div> 
-      <Header></Header>
+      <NavBar visible={false}></NavBar>
     <div className="wrapper">
       <nav className="navigation">
         <a href="/profile/">

@@ -4,7 +4,7 @@ import "../components/section/slider.css";
 import * as user from "../api/user";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "../components/Navs/Header";
+import { NavBar } from "../components/Navs/Nav1";
 
 export default function Signup() {
   const [loading, setLoading] = useState(false);
@@ -60,7 +60,7 @@ export default function Signup() {
 
   return (
     <div>
-      <Header></Header>
+       <NavBar visible={false}></NavBar>
       <div className="signup" style={signup}>
         <div
           className=""

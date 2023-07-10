@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as user from '../api/user'
 import logo from '../images/logo.jpg'
 import {Cookies} from 'react-cookie'
-import Header from "../components/Navs/Header";
+import { NavBar } from "../components/Navs/Nav1";
 
 export default function Login() {
     const cookie = new Cookies()
@@ -47,7 +47,8 @@ export default function Login() {
       
 
     return (
-        <div><Header></Header>
+        <div>
+             <NavBar visible={false}></NavBar>
         <div
         className="login"
         style={login}

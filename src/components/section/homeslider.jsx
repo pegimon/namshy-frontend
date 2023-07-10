@@ -10,11 +10,11 @@ export default function Homeslider() {
     <div
       id="carouselExample"
       className="carousel slide "
-      style={{ width: "90%", height: "500px" }}
+      style={{ height: "500px" , justifyContent:"center" ,borderRadius:"50px"}}
     >
       <div
         className="carousel-inner"
-        style={{ height: "500px" , borderRadius:"50px", margin:'auto'}}
+        style={{ height: "450px",borderRadius:"50px" }}
       >
         <Carousel interval={3000} controls={false} style={{  justifyContent:'center'}}>
             {src.map((image, index) => (
@@ -27,7 +27,7 @@ export default function Homeslider() {
             ))}
             </Carousel>
       </div>
-      <button
+      {/* <button
         className="carousel-control-prev"
         type="button"
         data-bs-target="#carouselExample"
@@ -44,7 +44,7 @@ export default function Homeslider() {
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
-      </button>
+      </button> */}
     </div>
   );
 }

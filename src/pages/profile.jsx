@@ -1,27 +1,44 @@
 import React from "react";
-import user from "../api/fake";
 import profileholder from "../images/profileholder.svg"
 import navarrow from "../images/navarrow.svg"
 import rewardsicon from "../images/rewardsicon.svg"
 import ordersicon from "../images/ordersicon.svg"
 import returnicon from "../images/returnicon.svg"
-import alerts from "../images/alerts.svg"
 import creditcards from "../images/creditcards.svg"
-import locationicon from "../images/locationicon.svg"
 import "./Profile.css";
 import ProfileInfo from "../components/profilecontainer/ProfileInfo"
 import Rewards from "../components/profilecontainer/rewards";
 import Orders from "../components/profilecontainer/orders"
 import Credit from "../components/profilecontainer/cedit";
+import Header from "../components/Navs/Header";
+import * as user from '../api/user'
 
-const subpages=[
-  (<ProfileInfo/>),
-  (<Rewards/>),
-  (<Orders/>),
-  (<Credit/>)
-]
+
+
 function Profile({path}) {
+  const [subpages,setsubpages]=React.useState([
+    (<ProfileInfo />),
+    (<Rewards/>),
+    (<Orders/>),
+    (<Credit/>)
+  ])
+  const [userdata,setUserData]=React.useState({})
+  React.useEffect(() => {
+    user.view_profile().then(data=>{
+      setUserData(data.respone)
+      setsubpages(([
+        (<ProfileInfo Uinfo={data.respone}/>),
+        (<Rewards/>),
+        (<Orders/>),
+        (<Credit/>)
+      ]))
+    }) 
+  },[])
+
+
   return (
+    <div> 
+      <Header></Header>
     <div className="wrapper">
       <nav className="navigation">
         <a href="/profile/">
@@ -35,9 +52,9 @@ function Profile({path}) {
               </div>
               <div className="profilenav">
                 <div className="username">
-                  {user.F_name} {user.L_name}
+                  {userdata.first_name} {userdata.last_name}
                 </div>
-                <div className="email">{user.Email}</div>
+                <div className="email">{userdata.email}</div>
               </div>
             </div>
             <div>
@@ -54,10 +71,10 @@ function Profile({path}) {
               <div className="navicons outline-icon">
                 <img
                   src={rewardsicon}
-                  alt="مكافآتي"
+                  alt="My rewards"
                 />
               </div>
-              <div className="navtext">مكافآتي</div>
+              <div className="navtext">My rewards</div>
             </div>
             <div>
               <img
@@ -73,10 +90,10 @@ function Profile({path}) {
               <div className="sc-kMjNwy navicons outline-icon">
                 <img
                   src={ordersicon}
-                  alt="طلباتي"
+                  alt="My orders"
                 ></img>
               </div>
-              <div className="navtext">طلباتي</div>
+              <div className="navtext">My orders</div>
             </div>
             <div>
               <img
@@ -92,10 +109,10 @@ function Profile({path}) {
               <div className="sc-kMjNwy navicons outline-icon">
                 <img
                   src={returnicon}
-                  alt="الإرجاع والاستبدال"
+                  alt="returns"
                 />
               </div>
-              <div className="navtext">الإرجاع والاستبدال</div>
+              <div className="navtext">returns</div>
             </div>
             <div>
               <img
@@ -113,29 +130,10 @@ function Profile({path}) {
               <div className="sc-kMjNwy navicons outline-icon">
                 <img
                   src={creditcards}
-                  alt="بطاقتي الائتمانية"
+                  alt="My cards"
                 />
               </div>
-              <div className="navtext">بطاقتي الائتمانية</div>
-            </div>
-            <div>
-              <img
-                src={navarrow}
-                className="navarrow" alt="<<"
-              />
-            </div>
-          </div>
-        </a>
-        <a href="/address/">
-          <div className="navmember">
-            <div>
-              <div className="sc-kMjNwy navicons outline-icon">
-                <img
-                  src={locationicon}
-                  alt="عنواني"
-                />
-              </div>
-              <div className="navtext">عنواني</div>
+              <div className="navtext">My cards</div>
             </div>
             <div>
               <img
@@ -146,29 +144,11 @@ function Profile({path}) {
           </div>
         </a>
         
-        <a href="/notifications/">
-          <div className="navmember">
-            <div>
-              <div className="sc-kMjNwy navicons outline-icon">
-                <img
-                  src={alerts}
-                  alt="الإخطارات والتنبيهات"
-                />
-              </div>
-              <div className="navtext">الإخطارات والتنبيهات</div>
-            </div>
-            <div>
-              <img
-                src={navarrow}
-                className="navarrow" alt="<<"
-              />
-            </div>
-          </div>
-        </a>
       </nav>
       <div className="Container">
         {subpages[path]}
       </div>
+    </div>
     </div>
   );
 }

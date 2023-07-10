@@ -10,11 +10,11 @@ export default function Homeslider() {
     <div
       id="carouselExample"
       className="carousel slide "
-      style={{ height: "500px" , justifyContent:"center" ,borderRadius:"50px"}}
+      style={{ height: "500px" , justifyContent:"center" ,borderRadius:"50px",margin:'auto'}}
     >
       <div
         className="carousel-inner"
-        style={{ height: "450px",borderRadius:"50px" }}
+        style={{ height: "450px",borderRadius:"50px" , width:'100%' , margin:'auto',}}
       >
         <Carousel interval={3000} controls={false} style={{  justifyContent:'center'}}>
             {src.map((image, index) => (

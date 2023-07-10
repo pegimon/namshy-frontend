@@ -1,10 +1,13 @@
 import React from "react";
 import ThirdSlider from "../components/section/ThirdSlider";
 import { Container } from "react-bootstrap";
+import Header from "../components/Navs/Header";
+
 
 export default function Bag() {
   return (
-    <Container style={{ position: "relative", top: "70px" }}>
+    <><div>          <Header></Header>
+    </div><><Container style={{ position: "relative", top: "70px" }}>
       <div>
         <div className="d-flex justify-content-between">
           <button
@@ -132,8 +135,7 @@ export default function Bag() {
                   <div className="bg-dark m-2">
                     <img
                       style={{ width: "90px", height: "130px" }}
-                      src="https://images.pexels.com/photos/712316/pexels-photo-712316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    />
+                      src="https://images.pexels.com/photos/712316/pexels-photo-712316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                   </div>
                 </div>
               </div>
@@ -158,6 +160,6 @@ export default function Bag() {
           <ThirdSlider id="second"></ThirdSlider>
         </div>
       </section>
-    </Container>
+    </Container></></>
   );
 }

@@ -25,7 +25,7 @@ export default function Home({section}) {
       >
         <div
           className="d-flex"
-          style={{ height: "500px", justifyContent: "center" }}
+          style={{ height: "500px", justifyContent: "center", borderRadius:"50px" }}
         >
           <Homeslider></Homeslider>
         </div>

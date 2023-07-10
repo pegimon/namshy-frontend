@@ -1,23 +1,23 @@
 import React from "react";
-import './styles/rewards.css'
+import "./styles/rewards.css";
 const Rewards = () => {
   return (
     <div class="Loyalty">
       <div class="HEAD">
-        <div class="headtext">مكافآتي</div>
+        <div class="headtext">My Rewards</div>
       </div>
       <div class="Loyalty__grid">
         <div class="Loyalty__grid">
           <div class="LoyaltyDashboard">
             <div class="LoyaltyCard LoyaltyCard--no-hover">
               <div class="Rewards">
-                <div class="Rewards__title">المستوى الفضي</div>
+                <div class="Rewards__title">Silver Level</div>
               </div>
             </div>
             <div class="LoyaltyDashboard__rewards section section--no-padding">
               <div class="">
                 <div class="LD-rewards-title">
-                  <strong>مكافآتي</strong>
+                  <strong>My Rewards</strong>
                 </div>
               </div>
               <div class="LD-rewards-panel">
@@ -26,43 +26,41 @@ const Rewards = () => {
                     <div class="LD-reward-block">
                       <div class="LD-reward-block-details">
                         <strong id="loyalty-reward-block-amount">
-                          خصم 25%
+                          25% off
                         </strong>
                         <p id="loyalty-reward-block-duration">
-                          على طلبيتك الأولى
+                          On your first order
                         </p>
                       </div>
                       <div class="LD-reward-block-button">
                         <strong id="loyalty-reward-block-activation">
-                          قم بتفعيل المكافأة
+                          Activate Reward{" "}
                         </strong>
                       </div>
                     </div>
                     <div class="LD-reward-block">
                       <div class="LD-reward-block-details">
                         <strong id="loyalty-reward-block-amount">
-                          خصم 10%
+25% off
                         </strong>
                         <p id="loyalty-reward-block-duration">
-                          على طلبيتك القادمة لمدة 24 ساعة
-                        </p>
+on your next order in 24 hours                        </p>
                       </div>
                       <div class="LD-reward-block-button">
                         <strong id="loyalty-reward-block-activation">
-                          قم بتفعيل المكافأة
+                          Activate Reward{" "}
                         </strong>
                       </div>
                     </div>
                     <div class="LD-reward-block">
                       <div class="LD-reward-block-details">
                         <strong id="loyalty-reward-block-amount">
-                          خصم يصل 20%
-                        </strong>
-                        <p id="loyalty-reward-block-duration">انفق ووفّر</p>
+Up to 20%                        </strong>
+                        <p id="loyalty-reward-block-duration">Spend & save</p>
                       </div>
                       <div class="LD-reward-block-button">
                         <strong id="loyalty-reward-block-activation">
-                          قم بتفعيل المكافأة
+                          Activate Reward{" "}
                         </strong>
                       </div>
                     </div>

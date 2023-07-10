@@ -21,7 +21,7 @@ export function NavBar({visible = true}) {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const handleLinkClick = (href) => {
-    console.log(window.location.pathname.split('/'))
+    
     navigate(href);
   };
 

@@ -11,7 +11,6 @@ export default function Home({section}) {
     const getCategory = async () => {
       await prod_cat.all_product_category().then(e => {
         setCategories(e.response)
-        console.log(e)
       })
     }
     getCategory()

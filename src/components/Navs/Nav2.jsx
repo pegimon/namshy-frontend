@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 export function Nav2({current_page}) {
   return (
-    window.location.pathname==="/"?<div></div>:
+        window.location.pathname==="/"?<div></div>:
     <div>
       <Container className="d-flex justify-content-evenly nav2 w-100">
         <Nav className="me-auto text-dark ">
